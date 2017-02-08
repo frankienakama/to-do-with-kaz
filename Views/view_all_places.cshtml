@@ -6,7 +6,7 @@
 <ul>
   @foreach(var place in Model)
   {
-    <li>@place.GetDescription()</li>
+    <li>@place.GetDescription(), @place.GetYear(), @place.GetFavThing()</li>
   }
 </ul>
 

@@ -12,7 +12,7 @@ namespace PlacesBeen
         return View["index.cshtml"];
       };
       Post["/view_all_places"] = _ => {
-        Place newPlace = new Place(Request.Form["place-name"]);
+        Place newPlace = new Place(Request.Form["place-name"], Request.Form["year-visited"], Request.Form["fav-thing"] );
         newPlace.Save();
         List<Place> allPlaces = Place.GetAll();
         return View["view_all_places.cshtml", allPlaces];
