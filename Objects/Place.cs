@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using PlacesBeen;
 
 namespace PlacesBeen.Objects
 
@@ -11,7 +13,6 @@ namespace PlacesBeen.Objects
     public Place(string description)
     {
       _description = description;
-      _instances.Add(this);
     }
 
     public string GetDescription()
@@ -30,6 +31,11 @@ namespace PlacesBeen.Objects
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public void Save()
+    {
+      _instances.Add(this);
     }
   }
 }
